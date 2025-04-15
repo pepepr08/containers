@@ -45,6 +45,25 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           tags: latest
 
+  build-rtems-5-sparc:
+
+    name: Build and Push qemu-rtems-5-sparc
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and Push
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: qemu-rtems-5-sparc
+          dockerfile: rtems-5-sparc/Dockerfile
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          tags: latest
+
   build-rtems-4-11:      
       
       name: Build and Push qemu-rtems-4-11
