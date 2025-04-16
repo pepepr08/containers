@@ -72,6 +72,6 @@ RUN tar -zxf dosfstools.tar.gz && rm dosfstools.tar.gz
 RUN cd dosfstools-* && ./configure && make && make prefix=/usr/local install
 
 # Remove unecessary dependencies now that rtems is built
-RUN apt-get purge -y libz-dev libssl-dev libexpat1-dev gettext unzip git flex bison texinfo curl \
-  libgmp-dev libmpfr-dev bzip2 xz-utils ninja-build
-RUN apt-get autoremove -y
+# RUN apt-get purge -y libz-dev libssl-dev libexpat1-dev gettext unzip git flex bison texinfo curl \
+#   libgmp-dev libmpfr-dev bzip2 xz-utils ninja-build
+# RUN apt-get autoremove -y
